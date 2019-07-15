@@ -10,3 +10,4 @@ Description: This is a set of helper functions I developed for myself
 License: What license is it under? I don't know
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.1.1

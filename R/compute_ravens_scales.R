@@ -1,21 +1,18 @@
 #' Compute series (A, B, C, D, E) and total score for Raven's Standard Progressive Matrices
 #'
 #' @param data 60-column matrix/data.frame
+#' @param key numeric vector of correct responses for RSPM, must be specified separately
 #' @return matrix of the size \code{nrow(data)} x 6
 #' @examples \dontrun{
-#' D <- cbind(D, compute_ravens_scales(D))
+#' D <- cbind(D, compute_ravens_scales(D, key = key))
 #' }
 
-compute_ravens_scales <- function(data) {
+compute_ravens_scales <- function(data, key = NULL) {
   if (ncol(data) != 60)
     stop('Data must have 60 columns')
 
-  #         1  2  3  4  5  6  7  8  9 10 11 12
-  key <- c( 4, 5, 1, 2, 6, 3, 6, 2, 1, 3, 4, 5, # A
-            2, 6, 1, 2, 1, 3, 5, 6, 4, 3, 4, 5, # B
-            8, 2, 3, 8, 7, 4, 5, 1, 7, 6, 1, 2, # C
-            3, 4, 3, 7, 8, 6, 5, 4, 1, 2, 5, 6, # D
-            7, 6, 8, 2, 1, 5, 1, 6, 3, 2, 4, 5) # E
+  if (length(key) != 60)
+    stop('key must have length 60')
 
   #             1  2  3  4  5  6  7  8  9 10 11 12
   nchoices <- c(6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, # A
