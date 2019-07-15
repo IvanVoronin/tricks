@@ -1,0 +1,12 @@
+Package: tricks
+Type: Package
+Title: Helper functions for basic statistical analysis
+Version: 0.1.0
+Author: Ivan Voronin
+Maintainer: Ivan Voronin <ivan.a.voronin@gmail.com>
+Description: This is a set of helper functions I developed for myself 
+  while performing analysis for behavior genetic research at Developmental Behavior Genetics Lab,
+  Psychological Institute of Russian Academy of Education, Moscow.
+License: What license is it under? I don't know
+Encoding: UTF-8
+LazyData: true
